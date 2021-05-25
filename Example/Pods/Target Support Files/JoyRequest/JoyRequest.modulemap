@@ -1,0 +1,6 @@
+framework module JoyRequest {
+  umbrella header "JoyRequest-umbrella.h"
+
+  export *
+  module * { export * }
+}
