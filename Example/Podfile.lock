@@ -1,0 +1,50 @@
+PODS:
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
+  - JHUD (0.3.0)
+  - JoyRequest (0.1.2):
+    - AFNetworking
+  - JoyWKWeb (0.1.0):
+    - AFNetworking
+    - JHUD
+    - JoyRequest
+    - SSZipArchive
+  - SSZipArchive (2.2.3)
+
+DEPENDENCIES:
+  - JoyWKWeb (from `../`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
+    - JHUD
+    - JoyRequest
+    - SSZipArchive
+
+EXTERNAL SOURCES:
+  JoyWKWeb:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  JHUD: 17650f65045d9843a7ad19f6a0b1eac6c78a45d2
+  JoyRequest: 32072decfc9e0fbaf29c02b2a4e4cb7a5dc6e1ba
+  JoyWKWeb: 1263dcc05155ae3ffe6cd7861fcd6fded2b21231
+  SSZipArchive: 62d4947b08730e4cda640473b0066d209ff033c9
+
+PODFILE CHECKSUM: 06a4dd1abf80238fcd81608c8009b0577a021773
+
+COCOAPODS: 1.10.1
