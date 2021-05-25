@@ -182,9 +182,18 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
     [self.calledByJSMethodSet setByAddingObjectsFromSet:methods];
 }
 
--(void)addCalledByJSMethodSet:(NSSet *)objects{
-    [self.calledByJSMethodSet setByAddingObjectsFromSet:objects];
-    [self registOCMethods:objects];
+//统一注册所有的js方法
+-(void)registOCMethods:(NSSet *)methods{
+    for (NSString *method in methods) {
+        [self.userContentController addScriptMessageHandler:self name:method];
+    }
+}
+
+//统一移除所有的js方法
+- (void)removeOCMethods:(NSSet *)methods{
+    for (NSString *method in methods) {
+        [self.userContentController removeScriptMessageHandlerForName:method];
+    }
 }
 
 -(void)customBackItemClicked{

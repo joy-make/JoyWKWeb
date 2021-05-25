@@ -30,10 +30,10 @@
     return instance;
 }
     
--(void)downLoadConfigSuccess:(VOIDBLOCK)success failure:(ERRORBLOCK)failure{
-    [Joy_Request getJsonWithUrl:@"http://127.0.0.1:8000/appConfig.json" param:nil Success:^(Joy_RequestResponse *response) {
+-(void)downLoadConfig:(NSString *)url Success:(VOIDBLOCK)success failure:(ERRORBLOCK)failure{
+    url?[Joy_Request getJsonWithUrl:url param:nil Success:^(Joy_RequestResponse *response) {
         [self checkNeedUpdatePackageConfig:response.responseObject :success failure:failure];
-    } failure:failure app:JoyAppRequestTypeLogin];
+    } failure:failure app:JoyAppRequestTypeLogin]:nil;
 }
     
     //对比包版本
@@ -48,7 +48,7 @@
         NSString *type = [model objectForKey:@"type"];
 
         NSString *oldVersion = [cacheConfigDict objectForKey:moduleName];
-        if ((newVersion.intValue >oldVersion.intValue || (oldVersion == nil))&&(![type isEqualToString:@"zipResource"])) {
+        if ((newVersion.intValue >oldVersion.intValue || (oldVersion == nil))&&(![type isEqualToString:@"zip"])) {
             dispatch_group_enter(group);
             dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 [self downLoadModule:moduleName url:zipUrlStr success:^{

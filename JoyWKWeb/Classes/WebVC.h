@@ -4,7 +4,7 @@
 //
 //  Created by Joymake on 2019/8/14.
 //  Copyright © 2019 IB. All rights reserved.
-//
+//  Web控制器,可以独立使用，也可以通过category扩展js方法
 
 #import <UIKit/UIKit.h>
 #import <WebKit/WebKit.h>

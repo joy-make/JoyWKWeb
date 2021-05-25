@@ -24,7 +24,7 @@
 
     NSDictionary *localConfigDict = [NSJSONSerialization JSONObjectWithData:JSONData options:NSJSONReadingAllowFragments error:nil];
 
-    NSDictionary *configDict = [ResourcePackageManager shareInstance].configDict?:localConfigDict;
+    NSDictionary *configDict = [ResourcePackageManager shareInstance].configDict?:localConfigDict?:nil;
     
     for (NSDictionary *dict in [configDict objectForKey:@"items"]) {
         NSString *title = [dict objectForKey:@"title"];
@@ -42,7 +42,8 @@
         }else if([h5Type isEqualToString:@"resource"]){
             NSString *url = [[NSBundle mainBundle]pathForResource:@"home" ofType:@"html"];
             vc = [[WebVC alloc]initWithType:KURLTypeCache url:url];
-        }else if([h5Type isEqualToString:@"native"]){
+        }
+        else if([h5Type isEqualToString:@"native"]){
             Class NativeClass = NSClassFromString(module);
             vc = [[NativeClass alloc]init];
         }
@@ -51,13 +52,14 @@
             vc.isNativeAlertActivate = true;
         }
         
-
+        if(vc){
         //    增加自己要拦截的域名
         //    [[UrlFiltManager shareInstance]configUrlFilt:@[@"http://127.0.0.1:8000/",@"http://www.joy.com/"]];
         vc.tabBarItem = [[UITabBarItem alloc]initWithTitle:title image:[UIImage imageNamed:icon] tag:0];
         UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
         nav.navigationBar.translucent = false;
         [self addChildViewController:vc];
+        }
     }
 }
 

@@ -10,7 +10,6 @@
 #import <objc/runtime.h>
 #import <Foundation/Foundation.h>
 #import <MobileCoreServices/MobileCoreServices.h>
-#import "UrlFiltManager.h"
 
 static NSString*const FilteredKey = @"FilteredKey";
 
@@ -155,4 +154,30 @@ static NSString*const FilteredKey = @"FilteredKey";
     return cachePath;
 }
 
+@end
+
+static UrlFiltManager *instance = nil;
+
+@interface UrlFiltManager ()
+@property (nonatomic,readwrite,strong)NSMutableSet *urlFiltSet;
+
+@end
+
+@implementation UrlFiltManager
+
++ (instancetype)shareInstance{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [self.class new];
+    });
+    return instance;
+}
+
+-(void)configUrlFilt:(NSArray *)urlFitArray{
+    [self.urlFiltSet addObjectsFromArray:urlFitArray];
+}
+
+-(NSMutableSet *)urlFiltSet{
+    return _urlFiltSet = _urlFiltSet?:[NSMutableSet set];
+}
 @end

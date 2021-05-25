@@ -12,11 +12,9 @@
 
 #import "ResourcePackageManager.h"
 #import "TabBarVC.h"
-#import "WebVC+JSNative.h"
-#import "WebVC+JSTransfer.h"
-#import "WebVC.h"
-#import "UrlFiltManager.h"
 #import "UrlRedirectionProtocol.h"
+#import "WebVC+JSNative.h"
+#import "WebVC.h"
 
 FOUNDATION_EXPORT double JoyWKWebVersionNumber;
 FOUNDATION_EXPORT const unsigned char JoyWKWebVersionString[];
