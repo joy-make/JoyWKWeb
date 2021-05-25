@@ -158,7 +158,7 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 - (void)loadLocalHTML{
     //本地资源
     NSString *fileURL = [NSString stringWithContentsOfFile:self.url encoding:NSUTF8StringEncoding error:nil];
-    NSURL *baseURL = [NSURL fileURLWithPath:self.url];
+    NSURL *baseURL = self.url?[NSURL fileURLWithPath:self.url]:nil;
     if (fileURL && baseURL) {
         [self.wkWebView loadHTMLString:fileURL baseURL:baseURL];
     }
