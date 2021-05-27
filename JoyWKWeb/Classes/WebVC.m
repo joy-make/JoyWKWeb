@@ -24,7 +24,7 @@ const BOOL JS_Call_Method_IsBuild = true;
 @property (nonatomic)UIBarButtonItem* rightButtonItem;  //右刷新按钮
 @property (nonatomic,assign)KURLType urlType;           //url类型
 @property (nonatomic,copy)NSString *url;                //url
-@property (nonatomic,copy)JHUD *hud;                //url
+@property (nonatomic,copy)JHUD *hud;
 
 @end
 
@@ -63,13 +63,32 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
     }
     return _wkWebView;
 }
+
+- (UIButton *)closeBtn {
+    if (!_closeBtn) {
+        _closeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _closeBtn.frame = CGRectMake(CGRectGetWidth(self.view.bounds) - 65, (CGRectGetHeight(self.view.bounds)  - 250)/2, 60, 60);
+        _closeBtn.alpha = 0.8;
+        NSURL *bundleURL = [[NSBundle mainBundle] URLForResource:@"JoyWKWeb" withExtension:@"bundle"];
+        NSBundle *bundle = [NSBundle bundleWithURL:bundleURL];
+        UIImage *image = [UIImage imageWithContentsOfFile:[bundle pathForResource:@"webClose" ofType:@"png"]];
+        
+        [_closeBtn setBackgroundImage:image forState:UIControlStateNormal];
+        [_closeBtn addTarget:self action:@selector(closeItemClicked) forControlEvents:UIControlEventTouchUpInside];
+        UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc]
+                                                        initWithTarget:self
+                                                        action:@selector(handlePan:)];
+        [_closeBtn addGestureRecognizer:panGestureRecognizer];
+    }
+    return _closeBtn;
+}
+
 - (UIProgressView *)progressView{
     if (!_progressView) {
         _progressView = [[UIProgressView alloc]initWithProgressViewStyle:UIProgressViewStyleDefault];
         if (_isNavHidden == YES) {
             _progressView.frame = CGRectMake(0, 0, self.view.bounds.size.width, 3);
         }else{
-            CGFloat navigationBarBottom = self.navigationController.navigationBar.bounds.size.height+self.navigationController.navigationBar.frame.origin.y;
             _progressView.frame = CGRectMake(0, 0, self.view.bounds.size.width, 3);
         }
         // 设置进度条的色彩
@@ -135,6 +154,7 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.wkWebView];
+    [self.view addSubview:self.closeBtn];
     [self setNavItems];
     [self.hud showAtView:self.wkWebView hudType:JHUDLoadingTypeCircleJoin];
     //是否拦截http的url
@@ -208,6 +228,37 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
     }
 }
 
+- (void)handlePan:(UIPanGestureRecognizer *)recognizer {
+    CGPoint translation = [recognizer translationInView:self.view];
+    CGFloat centerX = recognizer.view.center.x + translation.x;
+    CGFloat thecenter = 0;
+    recognizer.view.center = CGPointMake(centerX,
+                                         recognizer.view.center.y + translation.y);
+    [recognizer setTranslation:CGPointZero inView:self.view];
+    if (recognizer.state == UIGestureRecognizerStateEnded ||
+        recognizer.state == UIGestureRecognizerStateCancelled) {
+        if (centerX > self.view.bounds.size.width / 2) {
+            thecenter = self.view.bounds.size.width - 60 / 2;
+        } else {
+            thecenter = 60 / 2;
+        }
+        // contentOff_Y button允许拖动的Y值 根据需求调整(button没有Y值限制时删除下面两个判断即可)
+        CGFloat contentOff_Y = recognizer.view.center.y;
+        if (contentOff_Y > self.view.bounds.size.height - 60) {
+            contentOff_Y = self.view.bounds.size.height - 30;
+        }
+        if (contentOff_Y < self.navigationController.navigationBar.bounds.size.height) {
+            contentOff_Y = self.navigationController.navigationBar.bounds.size.height + 30;
+        }
+        
+        [UIView animateWithDuration:0.3 animations:^{
+            recognizer.view.center = CGPointMake(thecenter,
+                                                 contentOff_Y + translation.y);
+            
+        }];
+    }
+}
+
 - (void)roadLoadClicked{
     [self.wkWebView reload];
 }
@@ -235,9 +286,9 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 -(void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
  /*主意：这个方法是当网页的内容全部显示（网页内的所有图片必须都正常显示）的时候调用(不是出现的时候就调用)否则不显示，或则部分显示时这个方法就不调用。*/
     // 获取加载网页的标题
-//    if (self.wkWebView.title.length) {
-//        self.title = self.wkWebView.title;
-//    }
+    if (self.wkWebView.title.length) {
+        self.navigationItem.title = self.wkWebView.title;
+    }
     [self.hud hide];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     [self updateNavigationItems];

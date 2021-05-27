@@ -19,7 +19,7 @@
     self.window.rootViewController = [[UINavigationController alloc]initWithRootViewController:vc];
     vc.successBlock = ^(){
         TabBarVC  *vc = [TabBarVC new];
-        application.keyWindow.rootViewController = [[UINavigationController alloc]initWithRootViewController:vc];
+        application.keyWindow.rootViewController = vc;
     };
     [self.window makeKeyWindow];
     return YES;

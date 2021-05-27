@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JoyWKWeb'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'A short description of JoyWKWeb.'
 
 # This description is used to generate tags and improve search results.
@@ -31,10 +31,11 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '9.0'
   
   s.source_files = 'JoyWKWeb/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'JoyWKWeb' => ['JoyWKWeb/Assets/*.png']
-  # }
+#  s.resources = 'JoyWKWeb/Assets/*'
+
+   s.resource_bundles = {
+     'JoyWKWeb' => ['JoyWKWeb/Assets/*.png']
+   }
 
    s.public_header_files = 'JoyWKWeb/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'

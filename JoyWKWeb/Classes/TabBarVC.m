@@ -40,7 +40,7 @@
         }else if([h5Type isEqualToString:@"zip"]){
             vc = [[WebVC alloc]initWithType:KURLTypeCache url:htmlPath];
         }else if([h5Type isEqualToString:@"resource"]){
-            NSString *url = [[NSBundle mainBundle]pathForResource:@"home" ofType:@"html"];
+            NSString *url = [[NSBundle mainBundle]pathForResource:@"index" ofType:@"html" inDirectory:@"vue"];
             vc = [[WebVC alloc]initWithType:KURLTypeCache url:url];
         }
         else if([h5Type isEqualToString:@"native"]){
@@ -55,10 +55,13 @@
         if(vc){
         //    增加自己要拦截的域名
         //    [[UrlFiltManager shareInstance]configUrlFilt:@[@"http://127.0.0.1:8000/",@"http://www.joy.com/"]];
-        vc.tabBarItem = [[UITabBarItem alloc]initWithTitle:title image:[UIImage imageNamed:icon] tag:0];
+            UIImage *image = [UIImage imageNamed:icon];
+
+        vc.tabBarItem = [[UITabBarItem alloc]initWithTitle:title image:image tag:0];
+            vc.title =title;
         UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
         nav.navigationBar.translucent = false;
-        [self addChildViewController:vc];
+        [self addChildViewController:nav];
         }
     }
 }

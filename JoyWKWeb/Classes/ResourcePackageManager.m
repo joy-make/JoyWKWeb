@@ -48,7 +48,7 @@
         NSString *type = [model objectForKey:@"type"];
 
         NSString *oldVersion = [cacheConfigDict objectForKey:moduleName];
-        if ((newVersion.intValue >oldVersion.intValue || (oldVersion == nil))&&(![type isEqualToString:@"zip"])) {
+        if ((newVersion.intValue >oldVersion.intValue || (oldVersion == nil))&&([type isEqualToString:@"zip"])) {
             dispatch_group_enter(group);
             dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 [self downLoadModule:moduleName url:zipUrlStr success:^{

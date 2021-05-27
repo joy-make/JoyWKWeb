@@ -24,6 +24,7 @@ typedef NS_ENUM(NSUInteger,KURLType) {
 @property (nonatomic,assign) BOOL isNativeInterceptorActivate;      //是否开启url拦截
 @property (nonatomic,strong)UIProgressView *progressView;
 @property (nonatomic,assign)NSURLRequestCachePolicy cachePolicy;    //缓存策略
+@property (nonatomic,strong)UIButton *closeBtn;                     //暴露关闭按钮，可以自行配置🔘的图片或文字信息
 
 //初始化 
 - (instancetype)initWithType:(KURLType)urlType url:(NSString *)url;
@@ -31,8 +32,6 @@ typedef NS_ENUM(NSUInteger,KURLType) {
 //添加oc方法(js调用)
 - (void)addJsCallNativeMethods:(NSSet *)methods;
 
-//修改导航信息 isNavHidden=false模式下开启
-- (void)updateNavigationItems;
 @end
 
 NS_ASSUME_NONNULL_END
