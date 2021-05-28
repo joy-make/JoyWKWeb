@@ -38,7 +38,98 @@ JoyWKWeb 是基于WKWebView开发的一个的组件、提供功能如下
 ###### 10.支持HTTP、HTTPS、url重定向功能(如:设置过滤http://www.joy.com后,可以重定向此域名下访问的资源到本地资源)
 ###### 11.集成了一些可以被H5调用的基本的功能，如打电话、发短信、获取手机系统版本、缓存数据、获取缓存数据、清理缓存、展示/隐藏tabbar、页面回退功能
 
+## JoyWKWeb结构
+#### 1.WebVC 主要功能类可独立使用
+#### 2.WebVC+JSNative.h 扩展WebVC的功能、提供一些常用的系统方法封装以及便于原生对象转换H5可执行json的函数，可独立使用
+#### 3.UrlRedirectionProtocol 基于NSURLProtocol、用于配制需要拦截的域名以及拦截后相应资源的重定向
+#### 4.ResourcePackageManager.h 资源配置管理器:下载url对应的app的配置文件(或手动配制configDict对象)、并根据配制文件下载对应版本的H5压缩包、H5资源包的解压
+#### 5.TabBarVC 可配置的Tabbar控制器，需要配合ResourcePackageManager资源管理器远程配制tabbar上的菜单以及各菜单对应的H5URL、缓存资源、原生页面等。
+
+
 ## 具体使用方法，待补充
+```
+  WebVC *vc; //WebVC 初始化类型 KURLTypeURL/KURLTypeCache
+  vc = [[WebVC alloc]initWithType:KURLTypeURL url:h5Path];     //加载远程url
+  vc = [[WebVC alloc]initWithType:KURLTypeCache url:htmlPath]; //加载缓存地址
+  [vc addJsCallNativeMethods:[NSSet setWithArray:@[@"jsGetUserInfo",@"jsGetToken",@"jsSystemVersion",@"jsCallPhone"]]]; //注册和H5协定的js函数
+  [vc setCloseBtnColor:[UIColor orangeColor] image:nil];   //设置悬浮关闭按钮图片及图片的颜色
+  [self.navigationController pushViewController:vc animated:true];
+```
+
+### 实注册的js方法
+```
+extern const BOOL JS_Call_Method_IsBuild;
+
+@interface WebVC (JSNative)
+
+@end
+
+@implementation WebVC (JSNative)
+#pragma 打电话
+- (void)jsCallPhone:(NSString *)phone{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"tel:%@",phone]];
+    [self.wkWebView loadRequest:[NSURLRequest requestWithURL:url]];
+}
+
+#pragma 获取手机系统版本
+- (void)jsSystemVersion:(id)obj{
+    NSString* phoneVersion = [[UIDevice currentDevice] systemVersion];
+    NSDictionary *jsDict = @{
+        @"status":@"0",
+        @"description":@"手机系统版本",
+        @"body":@{
+                @"value":phoneVersion}
+    };
+
+    //methodName:jsSystemVersion为H5中监听的js函数
+    NSString *JSResult = JS_Call_Method_IsBuild?[self transferToJsBridgeJSonWithObject:jsDict methodName:@"jsSystemVersion"]:[NSString stringWithFormat:@"jsSystemVersionResult('%@')",phoneVersion];
+    [self.wkWebView evaluateJavaScript:JSResult completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+        NSLog(@"%@", error);
+    }];
+}
+```
+
+### H5中的js函数
+```
+//唤起电话
+function jsCallPhone(){
+    //android
+    if  (checkIsAndroidType()){
+        window.MainJsInterface.jsCallPhone("18666666666");
+    }else {
+    //ios
+        window.webkit.messageHandlers.jsCallPhone.postMessage("18666666666");
+    }
+}
+
+//获取系统版本
+function jsSystemVersion(){
+    if(checkIsAndroidType()){
+        window.MainJsInterface.jsSystemVersion();
+    }else {
+        window.webkit.messageHandlers.jsSystemVersion.postMessage(null);
+    }
+}
+
+//监听原生获取系统版本回调函数
+document.addEventListener("jsSystemVersion", function(evt) {
+    var content = "系统版本" + evt.detail["body"]["value"];
+	alert(content);
+});
+
+//检查app系统
+function checkIsAndroidType(){
+    var u = navigator.userAgent;
+    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+    if    (isAndroid == true){
+        return true
+    }else if(isiOS == true){
+        return false
+    }
+}
+```
+
 
 ## License
 
