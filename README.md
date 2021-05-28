@@ -9,6 +9,7 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+
 ## Requirements
 
 ## Installation
@@ -46,7 +47,9 @@ JoyWKWeb 是基于WKWebView开发的一个的组件、提供功能如下
 #### 5.TabBarVC 可配置的Tabbar控制器，需要配合ResourcePackageManager资源管理器远程配制tabbar上的菜单以及各菜单对应的H5URL、缓存资源、原生页面等。
 
 
-## 具体使用方法，待补充
+## 具体使用方法
+
+### WebVC使用(主功能,可独立使用,快捷实现H5与原生的js交互)
 ```
   WebVC *vc; //WebVC 初始化类型 KURLTypeURL/KURLTypeCache
   vc = [[WebVC alloc]initWithType:KURLTypeURL url:h5Path];     //加载远程url
@@ -56,7 +59,8 @@ JoyWKWeb 是基于WKWebView开发的一个的组件、提供功能如下
   [self.navigationController pushViewController:vc animated:true];
 ```
 
-### 实注册的js方法
+### 实现注册的js方法
+可以基于WebVC自建category实现私有方法,此外不再需要做其他步骤
 ```
 extern const BOOL JS_Call_Method_IsBuild;
 
@@ -129,6 +133,103 @@ function checkIsAndroidType(){
     }
 }
 ```
+至此,你的App已经可以正常和H5通讯了,以下再讲一些扩展功能
+
+### ResourcePackageManager
+```
+//url:配置文件下载地址 success:成功回调 failure:失败回调,配置文件下载成功后会自动根据配置文件下载配置文件中对应的远程资源文件包并解压
+-(void)downLoadConfig:(NSString*)url Success:(VOIDBLOCK)success failure:(ERRORBLOCK)failure;
+//也可以自行通过category的方式扩展ResourcePackageManager 实现自己公司特殊的配置文件下载,比如token信息
+```
+
+### TabBarVC
+```
+//结合ResourcePackageManager使用,tabbar会自动读取ResourcePackageManager配置文件并根据配置文件配置配置各tabbarItem上的Item
+
+```
+### UrlRedirectionProtocol、UrlFiltManager
+```
+@interface UrlRedirectionProtocol : NSURLProtocol
+//获取缓存路径
++(NSString *)getCachePath;
+
+@end
+
+@interface UrlFiltManager : NSObject
+
++ (instancetype)shareInstance;
+
+@property (nonatomic,readonly)NSMutableSet *urlFiltSet;
+
+//配置拦截的域名或地址
+- (void)configUrlFilt:(NSArray *)urlFitArray;
+
+@end
+```
+
+### 配置文件讲解
+//配置文件可放到远程服务器下载或者赋值给ResourcePackageManager管理类的configDict
+```
+{
+    "packageVersion": {
+        "zipResource": "0",//模块名及版本号(type为zip类型的压缩包需要，其他本地资源、远程url、原生模块不需要配置)	
+        "zip0":"0",
+        "dist":"0",
+        },
+    "items":[//模块列表
+        {
+            "url": "http://127.0.0.1:8000/dist.zip",//压缩包下载地址
+            "h5Path": "dist/index.html",//压缩包内资源文件
+            "icon": "guanbi",//需要配置的tabbar上的icon名称
+            "title": "vue",//tabbar模块名称
+            "module":"dist",//模块名(用于查找对比版本)
+            "version":"2",//远端资源包版本	
+            "type": "zip"//模块类型zip:压缩包 resource:本地资源 remote:远程url native:原生模块
+        },
+        {
+            "url": "http://127.0.0.1:8000/home.zip",
+            "h5Path": "home/home.html",
+            "icon": "guanbi",
+            "title": "zip资源",
+            "module":"zip0",
+            "version":"2",
+            "type": "zip"
+        },
+        {
+            "url": "http://127.0.0.1:8000/zipResource.zip",
+            "h5Path": "zipResource/zipResource.html",
+            "icon": "guanbi",
+            "title": "zip资源",
+            "module":"zipResource",
+            "version":"2",
+            "type": "zip"
+    },
+        {
+            "h5Path": "http://127.0.0.1:8000/flutter/flutter.html",
+            "icon": "guanbi",
+            "title": "远程资源",
+            "type": "remote"
+    },
+        
+        {
+            "h5Path": "http://www.cocoachina.com",
+            "icon": "guanbi",
+            "title": "cocoachina",
+            "module":"NativeVC",
+            "version":"0",
+            "type": "native"
+    }]
+}
+```
+
+### 简单的文件测试服务器
+```
+mac系统自带python环境
+1.可创建一个文件夹,将配置文件和资源文件(压缩包和H5项目放置其中)
+2.通过终端cd到文件夹目录
+3.执行python -m SimpleHTTPServer 即可启动一个简易服务器(本地地址为http://127.0.0.1:8000)
+```
+
 
 
 ## License
