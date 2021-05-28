@@ -25,7 +25,7 @@ pod 'JoyWKWeb'
 joy, wangguopeng.zh
 
 ## Description
-JoyWKWeb 是基于WKWebView开发的一个的组件、提供功能如下
+[JoyWKWeb 是基于WKWebView开发的一个的组件、提供功能如下,用法讲解可以点🦆](https://www.jianshu.com/writer#/notebooks/3041185/notes/88399392)
 
 ###### 1.快速的js注入方法,便于H5和OC进行交互、不需要实现WKWebView的代理
 ###### 2.二级页面自动带导航返回、关闭、刷新功能、回退到一级页面后自动隐藏
@@ -229,7 +229,6 @@ mac系统自带python环境
 2.通过终端cd到文件夹目录
 3.执行python -m SimpleHTTPServer 即可启动一个简易服务器(本地地址为http://127.0.0.1:8000)
 ```
-
 
 
 ## License
