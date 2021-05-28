@@ -1,33 +1,47 @@
 {
     "packageVersion": {
         "zipResource": "0",
+        "zip0":"0",
+        "dist":"0",
         },
     "items":[
         {
-            "h5Path": "home.html",
-            "icon": "sc_tabbar_portal_selected",
-            "title": "bundle资源",
-            "type": "resource"
+            "url": "http://127.0.0.1:8000/dist.zip",
+            "h5Path": "dist/index.html",
+            "icon": "guanbi",
+            "title": "vue",
+            "module":"dist",
+            "version":"2",
+            "type": "zip"
+        },
+        {
+            "url": "http://127.0.0.1:8000/home.zip",
+            "h5Path": "home/home.html",
+            "icon": "guanbi",
+            "title": "zip资源",
+            "module":"zip0",
+            "version":"2",
+            "type": "zip"
         },
         {
             "url": "http://127.0.0.1:8000/zipResource.zip",
             "h5Path": "zipResource/zipResource.html",
-            "icon": "sc_tabbar_portal_selected",
+            "icon": "guanbi",
             "title": "zip资源",
             "module":"zipResource",
-            "version":"1",
+            "version":"2",
             "type": "zip"
     },
         {
             "h5Path": "http://127.0.0.1:8000/flutter/flutter.html",
-            "icon": "sc_tabbar_portal_selected",
+            "icon": "guanbi",
             "title": "远程资源",
             "type": "remote"
     },
         
         {
             "h5Path": "http://www.cocoachina.com",
-            "icon": "sc_tabbar_portal_selected",
+            "icon": "guanbi",
             "title": "cocoachina",
             "module":"NativeVC",
             "version":"0",

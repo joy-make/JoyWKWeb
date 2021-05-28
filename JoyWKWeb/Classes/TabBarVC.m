@@ -36,7 +36,7 @@
         NSString *h5Type = [dict objectForKey:@"type"];
         WebVC *vc;
         if ([h5Type isEqualToString:@"remote"]) {
-            vc = [[WebVC alloc]initWithType:KURLTypeURL url:h5Path];
+            vc = [[WebVC alloc]initWithType:KURLTypeURL url:h5Path];    //加载远程url
         }else if([h5Type isEqualToString:@"zip"]){
             vc = [[WebVC alloc]initWithType:KURLTypeCache url:htmlPath];
         }else if([h5Type isEqualToString:@"resource"]){

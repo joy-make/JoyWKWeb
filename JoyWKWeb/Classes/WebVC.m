@@ -72,15 +72,21 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
         NSURL *bundleURL = [[NSBundle mainBundle] URLForResource:@"JoyWKWeb" withExtension:@"bundle"];
         NSBundle *bundle = [NSBundle bundleWithURL:bundleURL];
         UIImage *image = [UIImage imageWithContentsOfFile:[bundle pathForResource:@"webClose" ofType:@"png"]];
-        
+        image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];//始终根据Tint Color绘制图片，忽略图片的颜色信息
         [_closeBtn setBackgroundImage:image forState:UIControlStateNormal];
         [_closeBtn addTarget:self action:@selector(closeItemClicked) forControlEvents:UIControlEventTouchUpInside];
+        [_closeBtn setTintColor:[UIColor blueColor]];
         UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc]
                                                         initWithTarget:self
                                                         action:@selector(handlePan:)];
         [_closeBtn addGestureRecognizer:panGestureRecognizer];
     }
     return _closeBtn;
+}
+
+-(void)setCloseBtnColor:(UIColor *)color image:(UIImage *)image{
+    image?[self.closeBtn setBackgroundImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate ] forState:UIControlStateNormal]:nil;
+    color?[self.closeBtn setTintColor:color]:nil;
 }
 
 - (UIProgressView *)progressView{
