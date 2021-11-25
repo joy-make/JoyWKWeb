@@ -13,7 +13,7 @@
 
 const BOOL JS_Call_Method_IsBuild = true;
 
-@interface WebVC()<WKUIDelegate,WKScriptMessageHandler,WKNavigationDelegate>
+@interface WebVC()<WKUIDelegate,WKScriptMessageHandler,WKNavigationDelegate,UIScrollViewDelegate>
 @property (nonatomic,strong)WKWebView *wkWebView;
 @property (nonatomic,strong)WKWebViewConfiguration *configuration;
 @property (nonatomic,strong)WKPreferences *preferences;
@@ -126,7 +126,7 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 }
 
 -(NSMutableSet<NSString *> *)calledByJSMethodSet{
-    return _calledByJSMethodSet = _calledByJSMethodSet?:[NSMutableSet setWithArray:@[@"jsShare",@"jsSelectPhoto",@"jsGetAppEnv",@"jsBottomClick",@"jsHideTabBar",@"jsShowTabBar",@"jsCallPhone",@"jsSystemVersion",@"jsUserInfo",@"jsClearCache",@"jsCallSms",@"jsSaveToken",@"jsGetToken",@"jsEnableOrDisableAlert",@"jsSaveToCacheWithKeyValue",@"jsGetCacheForKey",@"jsClearCacheForKey",@"jsClearCache"]];
+    return _calledByJSMethodSet = _calledByJSMethodSet?:[NSMutableSet setWithArray:@[@"jsShare",@"jsSelectPhoto",@"jsGetAppEnv",@"jsBottomClick",@"jsHideTabBar",@"jsShowTabBar",@"jsCallPhone",@"jsSystemVersion",@"jsUserInfo",@"jsClearCache",@"jsCallSms",@"jsSaveToken",@"jsGetToken",@"jsEnableOrDisableAlert",@"jsSaveToCacheWithKeyValue",@"jsGetCacheForKey",@"jsClearCacheForKey"]];
 }
 
 -(void)dealloc{
@@ -146,6 +146,7 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
     [NSURLProtocol registerClass:[UrlRedirectionProtocol class]];
     [self.wkWebView setNavigationDelegate:self];
     self.isNativeAlertActivate?[self.wkWebView setUIDelegate:self]:nil;
+    self.wkWebView.scrollView.delegate = self;
     [self registOCMethods:self.calledByJSMethodSet];
 }
 
@@ -204,8 +205,8 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
     });
 }
     
--(void)addJsCallNativeMethods:(NSSet *)methods{
-    [self.calledByJSMethodSet setByAddingObjectsFromSet:methods];
+-(void)addJsCallNativeMethods:(NSArray *)methods{
+    [self.calledByJSMethodSet addObjectsFromArray:methods];
 }
 
 //统一注册所有的js方法
@@ -271,7 +272,9 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 
 -(void)updateNavigationItems{
     if (self.wkWebView.canGoBack) {
-        [self.navigationItem setLeftBarButtonItems:@[self.backItem,self.closeButtonItem] animated:NO];
+        if (!self.isNavHidden) {
+            [self.navigationItem setLeftBarButtonItems:@[self.backItem,self.closeButtonItem] animated:NO];
+        }
     }else{
         self.navigationController.interactivePopGestureRecognizer.enabled = YES;
         [self.navigationItem setLeftBarButtonItems:nil];
@@ -287,12 +290,17 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
     });
 }
 
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+}
+
+
 #pragma mark WKNavigationDelegate
 //这个是网页加载完成，导航的变化
 -(void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
  /*主意：这个方法是当网页的内容全部显示（网页内的所有图片必须都正常显示）的时候调用(不是出现的时候就调用)否则不显示，或则部分显示时这个方法就不调用。*/
     // 获取加载网页的标题
-    if (self.wkWebView.title.length) {
+    if (self.wkWebView.title.length  && !self.isNavHidden) {
         self.navigationItem.title = self.wkWebView.title;
     }
     [self.hud hide];

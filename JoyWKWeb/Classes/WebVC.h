@@ -30,7 +30,7 @@ typedef NS_ENUM(NSUInteger,KURLType) {
 - (instancetype)initWithType:(KURLType)urlType url:(NSString *)url;
     
 //添加oc方法(js调用)
-- (void)addJsCallNativeMethods:(NSSet *)methods;
+- (void)addJsCallNativeMethods:(NSArray *)methods;
 
 -(void)setCloseBtnColor:(UIColor *)color image:(UIImage *)image;
 

@@ -207,34 +207,34 @@
 		0B04788A550F5B889D6555AAB07BEE97 /* mz_strm_buf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = mz_strm_buf.h; path = SSZipArchive/minizip/mz_strm_buf.h; sourceTree = "<group>"; };
 		0B79E230AE265B382C7FD2C2D7791C81 /* Joy_Request.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Joy_Request.h; path = JoyRequest/Classes/APIService/Joy_Request.h; sourceTree = "<group>"; };
 		106ECD03DAAC22A6503CC437F0331EA8 /* AFAutoPurgingImageCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFAutoPurgingImageCache.m; path = "UIKit+AFNetworking/AFAutoPurgingImageCache.m"; sourceTree = "<group>"; };
-		12988A0643312D4B17BCF3C17342A24D /* mz_zip_rw.c */ = {isa = PBXFileReference; includeInIndex = 1; name = mz_zip_rw.c; path = SSZipArchive/minizip/mz_zip_rw.c; sourceTree = "<group>"; };
-		132F7988188C5C0C1851FA5726FD5524 /* mz_strm_wzaes.c */ = {isa = PBXFileReference; includeInIndex = 1; name = mz_strm_wzaes.c; path = SSZipArchive/minizip/mz_strm_wzaes.c; sourceTree = "<group>"; };
+		12988A0643312D4B17BCF3C17342A24D /* mz_zip_rw.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = mz_zip_rw.c; path = SSZipArchive/minizip/mz_zip_rw.c; sourceTree = "<group>"; };
+		132F7988188C5C0C1851FA5726FD5524 /* mz_strm_wzaes.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = mz_strm_wzaes.c; path = SSZipArchive/minizip/mz_strm_wzaes.c; sourceTree = "<group>"; };
 		13C9E21CFC3328DE0BEB9CA50E07D5FF /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+AFNetworking.m"; path = "UIKit+AFNetworking/UIButton+AFNetworking.m"; sourceTree = "<group>"; };
 		1499DAB2E6E54ABA97DE9CD3BBC43091 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIRefreshControl+AFNetworking.m"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
 		14EA26DBF2E9D4B826FB7EAB74364AB3 /* JHUD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JHUD.release.xcconfig; sourceTree = "<group>"; };
 		157DDB8280798C47AF9B5EE615DB3848 /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIRefreshControl+AFNetworking.h"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
 		1755F80D53CBAA765F500937E2FC4B16 /* Pods-JoyWKWeb_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JoyWKWeb_Example.release.xcconfig"; sourceTree = "<group>"; };
 		195218A80ECD360ED6D86908093FEB44 /* UIView+JHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+JHUD.h"; path = "JHudViewDemo/JHUD/UIView+JHUD.h"; sourceTree = "<group>"; };
-		1F1B98EA909DA2A07041DC77317DBAD4 /* mz_zip.c */ = {isa = PBXFileReference; includeInIndex = 1; name = mz_zip.c; path = SSZipArchive/minizip/mz_zip.c; sourceTree = "<group>"; };
+		1F1B98EA909DA2A07041DC77317DBAD4 /* mz_zip.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = mz_zip.c; path = SSZipArchive/minizip/mz_zip.c; sourceTree = "<group>"; };
 		1FBF52F1070FC109DCB9187818D131DF /* mz_compat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = mz_compat.h; path = SSZipArchive/minizip/mz_compat.h; sourceTree = "<group>"; };
 		22E06D8993EB8F3DAE8E8761533F1614 /* JoyRequest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JoyRequest.release.xcconfig; sourceTree = "<group>"; };
 		23D9A08540F7D5B72D5714D3679E8B7F /* Pods-JoyWKWeb_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-JoyWKWeb_Example-resources.sh"; sourceTree = "<group>"; };
-		25EE257ABE54C056A0F4FCF65EBCA29B /* JoyWKWeb.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = JoyWKWeb.bundle; path = "JoyWKWeb-JoyWKWeb.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
-		28491048FC67914390FE0DC9E8FA4C1D /* JoyWKWeb.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = JoyWKWeb.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		25EE257ABE54C056A0F4FCF65EBCA29B /* JoyWKWeb.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JoyWKWeb.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		28491048FC67914390FE0DC9E8FA4C1D /* JoyWKWeb.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = JoyWKWeb.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		2D45E44E71B3AAE8CB04EF776BB94B58 /* Pods-JoyWKWeb_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JoyWKWeb_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		2ECF6885F324E5B26335E887AEB5B64F /* JHUDAnimationView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JHUDAnimationView.h; path = JHudViewDemo/JHUD/JHUDAnimationView.h; sourceTree = "<group>"; };
 		3457B6EC34E02A6AE7789AD5AE61BAE8 /* Pods-JoyWKWeb_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JoyWKWeb_Example-dummy.m"; sourceTree = "<group>"; };
 		3520C1750444A6312514AA22D42CBE29 /* JoyRequest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JoyRequest.debug.xcconfig; sourceTree = "<group>"; };
 		35300093B7F780DC1217F455574FCFE0 /* AFImageDownloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFImageDownloader.h; path = "UIKit+AFNetworking/AFImageDownloader.h"; sourceTree = "<group>"; };
 		38E810C0817A9BA847D089468A0C5B78 /* AFNetworking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AFNetworking.debug.xcconfig; sourceTree = "<group>"; };
-		3B95C45A2C5879F149E8845200F2434E /* libJoyWKWeb.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libJoyWKWeb.a; path = libJoyWKWeb.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B95C45A2C5879F149E8845200F2434E /* libJoyWKWeb.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJoyWKWeb.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D8A5B42CAD66DC359FA33BC87657807 /* JoyWKWeb.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JoyWKWeb.debug.xcconfig; sourceTree = "<group>"; };
 		3DD6D47783D4DDA0CA3B86F41129A758 /* UrlRedirectionProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = UrlRedirectionProtocol.h; path = JoyWKWeb/Classes/UrlRedirectionProtocol.h; sourceTree = "<group>"; };
 		3DEBE3E25C950FB6ED432A1B2A4658B4 /* NSError+Joy_Message.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSError+Joy_Message.h"; path = "JoyRequest/Classes/common/NSError+Joy_Message.h"; sourceTree = "<group>"; };
 		3E0FF14CA5F8A9B9A3BB103DD0DBE5DF /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+AFNetworking.h"; path = "UIKit+AFNetworking/UIButton+AFNetworking.h"; sourceTree = "<group>"; };
 		3E1E67E401265D0E85D0965D55F48626 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		444CE2A1BDDB0C139FAA829F8B2992F6 /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIActivityIndicatorView+AFNetworking.m"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
-		4483369F90AD99605733409E284D9900 /* libJoyRequest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libJoyRequest.a; path = libJoyRequest.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4483369F90AD99605733409E284D9900 /* libJoyRequest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJoyRequest.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		448A2AB20A5125D8B4E6CD36FA4C4038 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
 		47FE4D4FEEFCB26DF8F68A3A73E6FA8C /* JHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JHUD-prefix.pch"; sourceTree = "<group>"; };
 		49EA3DF0DC5A133AD150B0DFAEA1DFCC /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
@@ -252,8 +252,8 @@
 		5CE83C4897091DD1CF1638D94D75056D /* JHUD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JHUD.debug.xcconfig; sourceTree = "<group>"; };
 		60DE0E69E45A0336FDF93804B4DF99DD /* Joy_NetCacheTool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Joy_NetCacheTool.h; path = JoyRequest/Classes/APIService/Joy_NetCacheTool.h; sourceTree = "<group>"; };
 		617ED42C4ACD1BA3F77F97FEA63AA07E /* mz_strm_split.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = mz_strm_split.h; path = SSZipArchive/minizip/mz_strm_split.h; sourceTree = "<group>"; };
-		654CCC72B13FFC7CE845544F358943F1 /* mz_strm_buf.c */ = {isa = PBXFileReference; includeInIndex = 1; name = mz_strm_buf.c; path = SSZipArchive/minizip/mz_strm_buf.c; sourceTree = "<group>"; };
-		65CF70F3E1B66CE1DCA749BB5A23D5BE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		654CCC72B13FFC7CE845544F358943F1 /* mz_strm_buf.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = mz_strm_buf.c; path = SSZipArchive/minizip/mz_strm_buf.c; sourceTree = "<group>"; };
+		65CF70F3E1B66CE1DCA749BB5A23D5BE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		6639DFF6F8B4528236DFCC139BB78461 /* JoyWKWeb-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JoyWKWeb-prefix.pch"; sourceTree = "<group>"; };
 		6756928C6D8B0ACA80984A01F3855CBE /* SSZipArchive-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SSZipArchive-prefix.pch"; sourceTree = "<group>"; };
 		67A6636F76A3D300D5BA1E88AFC1B06F /* Joy_RequestResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Joy_RequestResponse.m; path = JoyRequest/Classes/APIService/Joy_RequestResponse.m; sourceTree = "<group>"; };
@@ -272,26 +272,26 @@
 		784C45CEC19CCA1728B32C153510CC48 /* WebVC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WebVC.h; path = JoyWKWeb/Classes/WebVC.h; sourceTree = "<group>"; };
 		78C5587C9B348EC0833C925FDD0EEC1D /* Joy_Request.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Joy_Request.m; path = JoyRequest/Classes/APIService/Joy_Request.m; sourceTree = "<group>"; };
 		79029F192032238EA3F09EFB1192D838 /* UIImage+JHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+JHUD.h"; path = "JHudViewDemo/JHUD/UIImage+JHUD.h"; sourceTree = "<group>"; };
-		79A605FF27A8EEFA4C145B9501FE3BF4 /* mz_strm_mem.c */ = {isa = PBXFileReference; includeInIndex = 1; name = mz_strm_mem.c; path = SSZipArchive/minizip/mz_strm_mem.c; sourceTree = "<group>"; };
+		79A605FF27A8EEFA4C145B9501FE3BF4 /* mz_strm_mem.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = mz_strm_mem.c; path = SSZipArchive/minizip/mz_strm_mem.c; sourceTree = "<group>"; };
 		7A10CF212FCAC394B5D9C488540F279E /* UIImage+JHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+JHUD.m"; path = "JHudViewDemo/JHUD/UIImage+JHUD.m"; sourceTree = "<group>"; };
 		7A7780C203CF692DE7F9C9CD23C889A0 /* AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AFNetworking-dummy.m"; sourceTree = "<group>"; };
-		7DC43A11F0F36EBE241F760E40C8EF0B /* mz_crypt.c */ = {isa = PBXFileReference; includeInIndex = 1; name = mz_crypt.c; path = SSZipArchive/minizip/mz_crypt.c; sourceTree = "<group>"; };
+		7DC43A11F0F36EBE241F760E40C8EF0B /* mz_crypt.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = mz_crypt.c; path = SSZipArchive/minizip/mz_crypt.c; sourceTree = "<group>"; };
 		7FF29F297F60C28C44C57AC277CE350C /* UIView+JHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+JHUD.m"; path = "JHudViewDemo/JHUD/UIView+JHUD.m"; sourceTree = "<group>"; };
 		812CE3FC6B293DAD8A84976D161A24D4 /* mz_strm_wzaes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = mz_strm_wzaes.h; path = SSZipArchive/minizip/mz_strm_wzaes.h; sourceTree = "<group>"; };
-		8145CA8688A5816CDFC0F2D10C171D77 /* mz_strm_zlib.c */ = {isa = PBXFileReference; includeInIndex = 1; name = mz_strm_zlib.c; path = SSZipArchive/minizip/mz_strm_zlib.c; sourceTree = "<group>"; };
-		8164B8C5A6ABCC673F8744A2BD48DC2C /* mz_os.c */ = {isa = PBXFileReference; includeInIndex = 1; name = mz_os.c; path = SSZipArchive/minizip/mz_os.c; sourceTree = "<group>"; };
+		8145CA8688A5816CDFC0F2D10C171D77 /* mz_strm_zlib.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = mz_strm_zlib.c; path = SSZipArchive/minizip/mz_strm_zlib.c; sourceTree = "<group>"; };
+		8164B8C5A6ABCC673F8744A2BD48DC2C /* mz_os.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = mz_os.c; path = SSZipArchive/minizip/mz_os.c; sourceTree = "<group>"; };
 		81E1303D35E596CF555544878DBE0914 /* SSZipArchive-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SSZipArchive-dummy.m"; sourceTree = "<group>"; };
 		862AA124B6BE3ED7EE0D5D4B7BD2BC8E /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIProgressView+AFNetworking.h"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
 		86E8808C2D1909C4DFA1C071D00D9D97 /* AFImageDownloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFImageDownloader.m; path = "UIKit+AFNetworking/AFImageDownloader.m"; sourceTree = "<group>"; };
-		870FB659613B4F7AB878E2EDA191B587 /* mz_strm_os_posix.c */ = {isa = PBXFileReference; includeInIndex = 1; name = mz_strm_os_posix.c; path = SSZipArchive/minizip/mz_strm_os_posix.c; sourceTree = "<group>"; };
+		870FB659613B4F7AB878E2EDA191B587 /* mz_strm_os_posix.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = mz_strm_os_posix.c; path = SSZipArchive/minizip/mz_strm_os_posix.c; sourceTree = "<group>"; };
 		8734ACB12E2FA2B96E5C032FE906A913 /* WebVC+JSNative.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WebVC+JSNative.h"; path = "JoyWKWeb/Classes/WebVC+JSNative.h"; sourceTree = "<group>"; };
 		8A76536169272F9BF3A421608E706DC8 /* mz_strm_mem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = mz_strm_mem.h; path = SSZipArchive/minizip/mz_strm_mem.h; sourceTree = "<group>"; };
-		8A83D8E87ECBF4707B1DE7DD0C727204 /* mz_compat.c */ = {isa = PBXFileReference; includeInIndex = 1; name = mz_compat.c; path = SSZipArchive/minizip/mz_compat.c; sourceTree = "<group>"; };
-		8BAE4476146717AD14547F5BA4C48C94 /* mz_strm_split.c */ = {isa = PBXFileReference; includeInIndex = 1; name = mz_strm_split.c; path = SSZipArchive/minizip/mz_strm_split.c; sourceTree = "<group>"; };
+		8A83D8E87ECBF4707B1DE7DD0C727204 /* mz_compat.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = mz_compat.c; path = SSZipArchive/minizip/mz_compat.c; sourceTree = "<group>"; };
+		8BAE4476146717AD14547F5BA4C48C94 /* mz_strm_split.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = mz_strm_split.c; path = SSZipArchive/minizip/mz_strm_split.c; sourceTree = "<group>"; };
 		8E279ED24BBBCE4EECFE6A551B4A5838 /* ResourcePackageManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ResourcePackageManager.m; path = JoyWKWeb/Classes/ResourcePackageManager.m; sourceTree = "<group>"; };
 		8ED10631B359FE2B36FE31C5D8A17C07 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPSessionManager.m; path = AFNetworking/AFHTTPSessionManager.m; sourceTree = "<group>"; };
 		8F5ADDE3DF1BB96F36C7E826D4E3FD8A /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIKit+AFNetworking.h"; path = "UIKit+AFNetworking/UIKit+AFNetworking.h"; sourceTree = "<group>"; };
-		91B23470DEB9A986332BEB5034234BC7 /* libSSZipArchive.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libSSZipArchive.a; path = libSSZipArchive.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		91B23470DEB9A986332BEB5034234BC7 /* libSSZipArchive.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSSZipArchive.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		95D087FD421984BA5C7615D2592AE147 /* SSZipArchive.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SSZipArchive.modulemap; sourceTree = "<group>"; };
 		95F63B4D3E3E4FFCD067B2C7DFD1BD48 /* mz.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = mz.h; path = SSZipArchive/minizip/mz.h; sourceTree = "<group>"; };
 		97430878F2C4AE9EB798CA458056200C /* mz_os.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = mz_os.h; path = SSZipArchive/minizip/mz_os.h; sourceTree = "<group>"; };
@@ -299,21 +299,21 @@
 		9B64980C8DB4AD97E41F84617BF07CBF /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		9BBF03FB27D8DA19843718F675703081 /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIActivityIndicatorView+AFNetworking.h"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
 		9CBC4D9CB0ADEF30BF0A0202DB9EF076 /* mz_strm_pkcrypt.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = mz_strm_pkcrypt.h; path = SSZipArchive/minizip/mz_strm_pkcrypt.h; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DC894E61C0F31EE94B5D9E1831234A5 /* AFNetworking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AFNetworking.release.xcconfig; sourceTree = "<group>"; };
 		9FC42DCACB9F15D59352853A0C9CA87F /* AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
-		A17479495D96F93C15A0C283DC68A2DF /* libPods-JoyWKWeb_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-JoyWKWeb_Example.a"; path = "libPods-JoyWKWeb_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A49EFCC5AF5527CFD316BCB4164D847B /* mz_crypt_apple.c */ = {isa = PBXFileReference; includeInIndex = 1; name = mz_crypt_apple.c; path = SSZipArchive/minizip/mz_crypt_apple.c; sourceTree = "<group>"; };
-		A4FA15D44DF6BAC7550EDEED10862AA3 /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libAFNetworking.a; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A17479495D96F93C15A0C283DC68A2DF /* libPods-JoyWKWeb_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JoyWKWeb_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A49EFCC5AF5527CFD316BCB4164D847B /* mz_crypt_apple.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = mz_crypt_apple.c; path = SSZipArchive/minizip/mz_crypt_apple.c; sourceTree = "<group>"; };
+		A4FA15D44DF6BAC7550EDEED10862AA3 /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5EB78F372C7287695F504D1A48406F9 /* Joy_FileRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Joy_FileRequest.h; path = JoyRequest/Classes/APIService/Joy_FileRequest.h; sourceTree = "<group>"; };
 		AB157D052A39A3A686BCDC09E93B01CE /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkActivityIndicatorManager.h; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h"; sourceTree = "<group>"; };
-		B042DDA23A5F7F99A09A5C6388F34916 /* mz_strm_pkcrypt.c */ = {isa = PBXFileReference; includeInIndex = 1; name = mz_strm_pkcrypt.c; path = SSZipArchive/minizip/mz_strm_pkcrypt.c; sourceTree = "<group>"; };
+		B042DDA23A5F7F99A09A5C6388F34916 /* mz_strm_pkcrypt.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = mz_strm_pkcrypt.c; path = SSZipArchive/minizip/mz_strm_pkcrypt.c; sourceTree = "<group>"; };
 		B1189B944EE36EF9366BD49E2E17495C /* WKWebView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "WKWebView+AFNetworking.m"; path = "UIKit+AFNetworking/WKWebView+AFNetworking.m"; sourceTree = "<group>"; };
-		B2BFDE6344A0A838E81039AA28EE184C /* mz_os_posix.c */ = {isa = PBXFileReference; includeInIndex = 1; name = mz_os_posix.c; path = SSZipArchive/minizip/mz_os_posix.c; sourceTree = "<group>"; };
+		B2BFDE6344A0A838E81039AA28EE184C /* mz_os_posix.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = mz_os_posix.c; path = SSZipArchive/minizip/mz_os_posix.c; sourceTree = "<group>"; };
 		B355C1C66B3B9D098A6C71A3E01DDB5C /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkActivityIndicatorManager.m; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.m"; sourceTree = "<group>"; };
 		B573FBAD4B18A722A1C444DB119A8D2A /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLResponseSerialization.m; path = AFNetworking/AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		BB4E3A084CAC4B9CBB8D3AF5CB2B1B10 /* ZipArchive.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZipArchive.h; path = SSZipArchive/ZipArchive.h; sourceTree = "<group>"; };
-		C12993F2E38CB1ECAADF4E217F09CFDF /* libJHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libJHUD.a; path = libJHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C12993F2E38CB1ECAADF4E217F09CFDF /* libJHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1DAAA252BACDA6623D81451779B28E6 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLResponseSerialization.h; path = AFNetworking/AFURLResponseSerialization.h; sourceTree = "<group>"; };
 		C3092F11E72B9D53BD07161D27583F4D /* SSZipCommon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SSZipCommon.h; path = SSZipArchive/SSZipCommon.h; sourceTree = "<group>"; };
 		C3B4DC80AD4E1EED97A87ABFB10A4591 /* SSZipArchive-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SSZipArchive-umbrella.h"; sourceTree = "<group>"; };
@@ -332,9 +332,9 @@
 		DF6495ACD277053021C7970CE3665A52 /* AFCompatibilityMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFCompatibilityMacros.h; path = AFNetworking/AFCompatibilityMacros.h; sourceTree = "<group>"; };
 		E7142ADAAABD256701649422AFC4D043 /* JHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JHUD.h; path = JHudViewDemo/JHUD/JHUD.h; sourceTree = "<group>"; };
 		E9C2213A00A660A6D1B76457C37D0A05 /* Joy_NetHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Joy_NetHeader.h; path = JoyRequest/Classes/APIService/Joy_NetHeader.h; sourceTree = "<group>"; };
-		F139C8352458275FA5CBE3920AD72F03 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		F139C8352458275FA5CBE3920AD72F03 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F2676A9A84531BF01E2E839EA8174824 /* JoyRequest-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JoyRequest-dummy.m"; sourceTree = "<group>"; };
-		F5D18313E03367814EDCFB1EA9B34145 /* mz_strm.c */ = {isa = PBXFileReference; includeInIndex = 1; name = mz_strm.c; path = SSZipArchive/minizip/mz_strm.c; sourceTree = "<group>"; };
+		F5D18313E03367814EDCFB1EA9B34145 /* mz_strm.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = mz_strm.c; path = SSZipArchive/minizip/mz_strm.c; sourceTree = "<group>"; };
 		F6D98138A6BC87D3FD0B5FE459F1E170 /* SSZipArchive.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SSZipArchive.m; path = SSZipArchive/SSZipArchive.m; sourceTree = "<group>"; };
 		F743E42919C07225D08CB913C501CA3A /* mz_crypt.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = mz_crypt.h; path = SSZipArchive/minizip/mz_crypt.h; sourceTree = "<group>"; };
 		F93B81AE3F9ED4C1CBBF33C30389882A /* ResourceBundle-JoyWKWeb-JoyWKWeb-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-JoyWKWeb-JoyWKWeb-Info.plist"; sourceTree = "<group>"; };
@@ -477,7 +477,6 @@
 				D1D8E3284393C38C17653231D654730C /* NSError+Joy_Message.m */,
 				1300ED229893063EED267B31387D5505 /* Support Files */,
 			);
-			name = JoyRequest;
 			path = JoyRequest;
 			sourceTree = "<group>";
 		};
@@ -544,7 +543,6 @@
 				BB4E3A084CAC4B9CBB8D3AF5CB2B1B10 /* ZipArchive.h */,
 				A3E3FB305D43F92D54989B59AA3D22F1 /* Support Files */,
 			);
-			name = SSZipArchive;
 			path = SSZipArchive;
 			sourceTree = "<group>";
 		};
@@ -599,7 +597,6 @@
 				253843CC2273D749D06F0A6547C14ACC /* Support Files */,
 				7920FB9658514D6A3A9F036429CA7B8F /* UIKit */,
 			);
-			name = AFNetworking;
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
@@ -616,7 +613,6 @@
 				7FF29F297F60C28C44C57AC277CE350C /* UIView+JHUD.m */,
 				3456EF0F91B98E8CB928AC67D4EE4DD5 /* Support Files */,
 			);
-			name = JHUD;
 			path = JHUD;
 			sourceTree = "<group>";
 		};
@@ -1542,8 +1538,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};

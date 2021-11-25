@@ -17,7 +17,7 @@ PODS:
   - JHUD (0.3.0)
   - JoyRequest (0.1.3):
     - AFNetworking
-  - JoyWKWeb (0.1.1):
+  - JoyWKWeb (0.1.3):
     - AFNetworking
     - JHUD
     - JoyRequest
@@ -42,7 +42,7 @@ SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   JHUD: 17650f65045d9843a7ad19f6a0b1eac6c78a45d2
   JoyRequest: 7831554cbf01281c6e0be3ae6a0912ae1ed6c7a6
-  JoyWKWeb: 83e2c036422e04f4a55e250b380508f08d385922
+  JoyWKWeb: aa53b4cbb5a3a769b34106ae20886427306c377a
   SSZipArchive: 62d4947b08730e4cda640473b0066d209ff033c9
 
 PODFILE CHECKSUM: b9eba914f1052916d9b222ec91eea0e460076045

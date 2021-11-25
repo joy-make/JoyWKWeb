@@ -40,7 +40,8 @@
         }else if([h5Type isEqualToString:@"zip"]){
             vc = [[WebVC alloc]initWithType:KURLTypeCache url:htmlPath];
         }else if([h5Type isEqualToString:@"resource"]){
-            NSString *url = [[NSBundle mainBundle]pathForResource:@"index" ofType:@"html" inDirectory:@"vue"];
+//            NSString *url = [[NSBundle mainBundle]pathForResource:@"index" ofType:@"html" inDirectory:@"vue"];
+            NSString *url = [[NSBundle mainBundle]pathForResource:@"home" ofType:@"html" inDirectory:@"Resource"];
             vc = [[WebVC alloc]initWithType:KURLTypeCache url:url];
         }
         else if([h5Type isEqualToString:@"native"]){
