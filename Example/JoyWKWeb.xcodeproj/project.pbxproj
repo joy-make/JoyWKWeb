@@ -498,7 +498,7 @@
 				GCC_PREFIX_HEADER = "JoyWKWeb/JoyWKWeb-Prefix.pch";
 				INFOPLIST_FILE = "JoyWKWeb/JoyWKWeb-Info.plist";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = com.zzx.ssd;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzx.ssdD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;

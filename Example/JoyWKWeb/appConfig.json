@@ -21,7 +21,7 @@
             "title": "zip资源",
             "module":"zip0",
             "version":"2",
-            "type": "zip"
+            "type": "resource"
         },
         {
             "url": "http://127.0.0.1:8000/zipResource.zip",

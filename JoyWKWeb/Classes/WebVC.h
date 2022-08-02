@@ -26,12 +26,29 @@ typedef NS_ENUM(NSUInteger,KURLType) {
 @property (nonatomic,assign)NSURLRequestCachePolicy cachePolicy;    //缓存策略
 @property (nonatomic,strong)UIButton *closeBtn;                     //暴露关闭按钮，可以自行配置🔘的图片、图片颜色、隐藏与否、点击事件等
 
+//初始化
+@property(nonatomic,readonly)WebVC  *(^initWebVC)(KURLType urlType,NSString *url);
+//隐藏导航
+@property(nonatomic,readonly)WebVC  *(^hiddenNav)(BOOL hiddenNav);
+//配置缓存策略
+@property(nonatomic,readonly)WebVC  *(^configCachePolicy)(NSURLRequestCachePolicy cachePolicy);
+//是否开启url拦截功能
+@property(nonatomic,readonly)WebVC  *(^InterceptorActivate)(BOOL interceptorActivate);
+//添加js方法
+@property(nonatomic,readonly)WebVC  *(^addJsCallNativeMethods)(NSArray *methods);
+//配置关闭按钮颜色、图片
+@property(nonatomic,readonly)WebVC  *(^configCloseBtn)(UIColor *color,UIImage *image);
+
 //初始化 
 - (instancetype)initWithType:(KURLType)urlType url:(NSString *)url;
     
 //添加oc方法(js调用)
 - (void)addJsCallNativeMethods:(NSArray *)methods;
 
+/*注册H5按钮监听事件*/
+-(void)registH5BtnObserverByElementId:(NSString *)elementId registFunction:(NSString *)func;
+
+//设置关闭按钮的颜色
 -(void)setCloseBtnColor:(UIColor *)color image:(UIImage *)image;
 
 @end

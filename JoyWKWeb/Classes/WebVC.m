@@ -216,6 +216,16 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
     }
 }
 
+//注册H5按钮监听事件
+-(void)registH5BtnObserverByElementId:(NSString *)elementId registFunction:(NSString *)func{
+//    NSString *baiduButtonId = @"getApp";
+//    NSString *baiduMessage = @"myFun";
+    NSString *scriptStr = [NSString stringWithFormat:@"function fun(){window.webkit.messageHandlers.%@.postMessage(null);}(function(){var btn=document.getElementById(\"%@\");btn.addEventListener('click',fun,false);}());", func, elementId];
+    WKUserScript *userScript = [[WKUserScript alloc] initWithSource:scriptStr injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];
+    [self.userContentController addUserScript:userScript];
+    [self.userContentController addScriptMessageHandler:self name:func];
+}
+
 //统一移除所有的js方法
 - (void)removeOCMethods:(NSSet *)methods{
     for (NSString *method in methods) {
@@ -346,6 +356,13 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
 
+#pragma mark 外部链接
+- (WKWebView *)webView:(WKWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures {
+    if (navigationAction.request.URL) {
+        [webView loadRequest:[NSURLRequest requestWithURL:navigationAction.request.URL]];
+    }
+    return nil;
+}
 #pragma mark 跳转失败的时候调用
 -(void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error{
     [self.hud hide];
@@ -428,6 +445,64 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 //    self.hud.messageLabel.text = [NSString stringWithFormat:@"函数名:%@\n参数:%@\n结果:%s",message.name,message.body,result?"":"方法未找到"];
 //    [self.hud showAtView:self.wkWebView hudType:JHUDLoadingTypeFailure];
 //    [self.hud hideAfterDelay:2];
+    
+
+}
+
+//初始化
+-(WebVC * _Nonnull (^)(KURLType, NSString * _Nonnull))initWebVC{
+    __weak __typeof(&*self)weakSelf = self;
+    return ^(KURLType urlType,NSString *url){
+        weakSelf.urlType = urlType;
+        weakSelf.url = url;
+        return weakSelf;
+    };
+}
+
+//隐藏导航
+-(WebVC * _Nonnull (^)(BOOL))hiddenNav{
+    __weak __typeof(&*self)weakSelf = self;
+    return ^(BOOL hidden){
+        weakSelf.isNavHidden = hidden;
+        return weakSelf;
+    };
+}
+
+//配置缓存策略
+-(WebVC * _Nonnull (^)(NSURLRequestCachePolicy))configCachePolicy{
+    __weak __typeof(&*self)weakSelf = self;
+    return ^(NSURLRequestCachePolicy cachePolicy){
+        weakSelf.cachePolicy = cachePolicy;
+        return weakSelf;
+    };
+}
+
+//拦截url
+-(WebVC * _Nonnull (^)(BOOL))InterceptorActivate{
+    __weak __typeof(&*self)weakSelf = self;
+    return ^(BOOL interceptorActivate){
+        weakSelf.isNativeInterceptorActivate = interceptorActivate;
+        return weakSelf;
+    };
+}
+
+//添加js方法
+-(WebVC * _Nonnull (^)(NSArray * _Nonnull))addJsCallNativeMethods{
+    __weak __typeof(&*self)weakSelf = self;
+    return ^(NSArray *methods){
+        methods?[weakSelf.calledByJSMethodSet addObjectsFromArray:methods]:nil;
+        return weakSelf;
+    };
+}
+
+//配置关闭按钮颜色、图片
+-(WebVC * _Nonnull (^)(UIColor * _Nonnull, UIImage * _Nonnull))configCloseBtn{
+    __weak __typeof(&*self)weakSelf = self;
+    return ^(UIColor *color,UIImage *image){
+        image?[weakSelf.closeBtn setBackgroundImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate ] forState:UIControlStateNormal]:nil;
+        color?[weakSelf.closeBtn setTintColor:color]:nil;
+        return weakSelf;
+    };
 }
 
 @end

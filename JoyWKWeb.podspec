@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JoyWKWeb'
-  s.version          = '0.1.4'
-  s.summary          = 'A short description of JoyWKWeb.'
+  s.version          = '0.1.5'
+  s.summary          = '增加H5按钮事件监听功能'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?

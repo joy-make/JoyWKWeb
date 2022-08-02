@@ -24,7 +24,7 @@
     label.font = [UIFont boldSystemFontOfSize:25];
     label.textAlignment = NSTextAlignmentCenter;
     __weak __typeof(&*self)weakSelf = self;
-    [[ResourcePackageManager shareInstance] downLoadConfig:@"http://172.0.0.1:8000/appConfig.json" Success:^{
+    [[ResourcePackageManager shareInstance] downLoadConfig:@"http://192.168.2.103:8000/appConfig.json" Success:^{
         __strong __typeof(&*weakSelf)strongSelf = weakSelf;
         strongSelf.successBlock?strongSelf.successBlock():nil;
     } failure:^(NSError *error) {
