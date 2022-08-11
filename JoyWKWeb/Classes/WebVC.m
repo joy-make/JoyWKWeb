@@ -282,9 +282,7 @@ static void *WkwebBrowserContext = &WkwebBrowserContext;
 
 -(void)updateNavigationItems{
     if (self.wkWebView.canGoBack) {
-        if (!self.isNavHidden) {
-            [self.navigationItem setLeftBarButtonItems:@[self.backItem,self.closeButtonItem] animated:NO];
-        }
+        self.isNavHidden?nil:[self.navigationItem setLeftBarButtonItems:@[self.backItem,self.closeButtonItem] animated:NO];
     }else{
         self.navigationController.interactivePopGestureRecognizer.enabled = YES;
         [self.navigationItem setLeftBarButtonItems:nil];

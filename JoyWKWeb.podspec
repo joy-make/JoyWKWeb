@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JoyWKWeb'
-  s.version          = '0.1.5'
+  s.version          = '0.1.6'
   s.summary          = '增加H5按钮事件监听功能'
 
 # This description is used to generate tags and improve search results.
